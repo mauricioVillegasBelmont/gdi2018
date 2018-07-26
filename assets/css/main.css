@@ -1,0 +1,298 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+html,body{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+    background-color: #dadada;
+}
+
+#main{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 50px 0;
+    border: none;
+    overflow:hidden;
+}
+
+
+
+
+
+/**/
+footer{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    height: 30px;
+    padding: 10px 0 10px 30px;
+    cursor: auto !important;
+    z-index: 200;
+    background-color: #fff;
+    border-radius: 10px 0 0 0;
+    -webkit-box-shadow: -4px -4px 25px 0px rgba(0,0,0,0.25);
+    -moz-   box-shadow: -4px -4px 25px 0px rgba(0,0,0,0.25);
+            box-shadow: -4px -4px 25px 0px rgba(0,0,0,0.25);
+}
+footer .wrapper{
+    /*position: absolute;
+    right: 5vw;*/
+    height: 100%;
+    width: 100%;
+}
+
+footer input[type="range"] {
+  -webkit-appearance: none;
+  width: 200px;
+  height: 3px;
+  background: #b2e519;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+footer input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width:  30px;
+  height: 30px;
+  border-radius: 100%;
+  background: #434343;
+  position: relative;
+  border: 3px solid #95b734;
+  z-index: 3;
+  cursor: pointer;
+    text-align: center;
+    
+    
+}
+
+footer input[type="image"]{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    color: #b2e519;
+    /*font-weight: bolder;*/
+    display: inline-block;
+    vertical-align: middle;
+}
+/**/
+
+
+
+
+
+#flipbook{
+    margin: auto;
+    transform:translate(50% 50%);
+    background-color: transparent;
+    pointer-events: all;
+    -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.50);
+    -moz-   box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.50);
+            box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.50);
+    -webkit-transition:margin-left 0.2s ease-in-out;
+  -moz-transition:margin-left 0.2s ease-in-out;
+  -o-transition:margin-left 0.2s ease-in-out;
+  -ms-transition:margin-left 0.2s ease-in-out;
+  transition:margin-left 0.2s ease-in-out;
+}
+
+#flipbook img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: translateX(0);
+}
+#flipbook div img.bg{
+    top: 0;
+}
+#flipbook .even img.bg, #flipbook .even img.cr{
+    top: 0;
+    right: 0;
+    opacity: 1;
+}
+#flipbook .odd  img.bg, #flipbook .odd  img.cr{
+    top: 0;
+    left:  0;
+    opacity: 1;
+}
+
+#flipbook .even img.traslate{
+    transform: translateX(-101%);
+}
+#flipbook .odd  img.traslate{
+    transform: translateX(101%);
+}
+
+#flipbook img{
+    transition: all 1s;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: auto;
+    max-height: 100Vh;
+    z-index: 200;
+    background-color: #fff;
+    border-radius: 0 0 10px 0;
+    -webkit-box-shadow: 4px 4px 25px 0px rgba(0,0,0,0.25);
+    -moz-   box-shadow: 4px 4px 25px 0px rgba(0,0,0,0.25);
+            box-shadow: 4px 4px 25px 0px rgba(0,0,0,0.25);
+}
+
+nav input, nav a, button{
+    display: block;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    width: calc(100% - 15px);
+    margin: 3px 3px 3px 12px;
+    max-height: calc(100vh / 9);
+}
+nav .btn{
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    min-height: calc(100vh / 9);
+    max-height: calc(100vh / 9);
+}
+nav .active{
+    display: block;
+}
+button, input[type="button"]{
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+button img{
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.hnav{
+    position: fixed;
+    max-height: 5vh;
+    max-width:  5vh;
+    height: 100%;
+    width:  100%;
+    top: calc(50% - 30px);
+    z-index: 200;
+    pointer-events: all!important;
+}
+
+#prevBtn{
+    left: 80px;
+}
+
+#nextBtn{
+    right: 80px;
+}
+
+#s01{
+    background-color: #00b2ef;
+    background-image: url(../menu/MENU-titles-01.png);
+}
+#s02{
+    background-color: #8ec63d;
+    background-image: url(../menu/MENU-titles-02.png);
+}
+#s03{
+    background-color: #ea008c;
+    background-image: url(../menu/MENU-titles-03.png);
+}
+#s04{
+    background-color: #894f9e;
+    background-image: url(../menu/MENU-titles-04.png);
+}
+#s05{
+    background-color: #cccccc;
+    background-image: url(../menu/MENU-titles-05.png);
+}
+#s06{
+    background-color: #ffa800;
+    background-image: url(../menu/MENU-titles-06.png);
+}
+#s07{
+    background-color: #00adc2;
+    background-image: url(../menu/MENU-titles-07.png);
+}
+
+.opacity{
+    opacity: 0:
+}
+
+
+

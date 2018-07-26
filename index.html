@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+    <title>Guía de Implementación 2018</title>
+    <link rel='shortcut icon' type='image/x-icon' href='assets/icons/SC.ico' />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <button id="prevBtn" class="hnav"><img src="assets/icons/prev.png"></button>
+    <button id="nextBtn" class="hnav"><img src="assets/icons/next.png"></button>
+    <footer>
+        <input type="image" value="&times;" onclick="zoomDef()" src="assets/icons/close.svg" width="30" height="30">
+        <input type="image" value="-" onclick="zoomDown()" src="assets/icons/zoomOut.svg" width="30" height="30">
+        <input id="zoomRange" type="range" name="zoom" min="1" max="2" defaultValue="1" value="1" step="0.5" onchange="zoom(this.value)">
+        <input type="image" value="+" onclick="zoomUp()" src="assets/icons/zoomIn.svg" width="30" height="30"> 
+    </footer>
+    <div id="main" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div id="flipbook">
+            <div class="hard  "> <img class="bg" src="assets/img/page.jpg"></div>
+            <div class="hard  "> <img class="bg" src="assets/img/page2.jpg"></div>
+            <div> <img class="bg" src="assets/img/page3.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page4.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page5.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page6.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page7.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page8.jpg">  </div>
+            <div> <img class="bg" src="assets/img/page9.jpg">  </div>
+            <div> <img class="bg" src="assets/img/page10.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page11.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page12.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page13.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page14.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page15.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page16.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page17.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page18.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page19.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page20.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page21.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page22.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page23.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page24.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page25.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page26.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page27.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page28.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page29.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page30.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page31.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page32.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page33.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page34.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page35.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page36.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page37.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page38.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page39.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page40.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page41.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page42.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page43.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page44.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page45.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page46.jpg"> </div>
+            <div> <img class="bg" src="assets/img/page47.jpg"> </div>
+            <div class="hard  "> <img class="bg" src="assets/img/page48.jpg">
+                <!-- <img class="anim traslate" src="assets/img/tras/traslate30.png">--></div>
+            <div class="hard  "> <img class="bg" src="assets/img/white.jpg"> </div>
+        </div>
+    </div>
+    <nav>
+        <button id="home"><img src="assets/icons/home.png"></button>
+        <button id="menu" class="active"><img src="assets/icons/menu.png"></button>
+        <div id="s01" class="btn" onclick="goto(6)"></div>
+        <div id="s02" class="btn" onclick="goto(10)"></div>
+        <div id="s03" class="btn" onclick="goto(18)"></div>
+        <div id="s04" class="btn" onclick="goto(22)"></div>
+        <div id="s05" class="btn" onclick="goto(30)"></div>
+        <div id="s06" class="btn" onclick="goto(36)"></div>
+        <div id="s07" class="btn" onclick="goto(46)"></div>
+    </nav>
+    
+    <script type="text/javascript" src="assets/js/check.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/lib/turn.js"></script>
+    <!--<script type="text/javascript" src="assets/lib/turn.html4.js"></script>-->
+    <script type="text/javascript" src="assets/lib/zoom.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>
